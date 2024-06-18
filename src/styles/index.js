@@ -9,6 +9,8 @@ const styles = {
     start: `${flexCenter} justify-start`,
     col: `${flexCenter} flex-col justify-center`,
   },
+  LangLi: "px-4 py-2 hover:bg-gray-100 cursor-pointer text-black-color",
+  sectionFooter: "flex flex-col gap-3 justify-start items-start",
 };
 
 export default styles;
