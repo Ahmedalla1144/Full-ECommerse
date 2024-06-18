@@ -1,0 +1,15 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        "white-color": "#FAFAFA",
+        "black-color": "#000000",
+        navbar: "#D9D9D9",
+        secondary: "#DB4444",
+      },
+    },
+  },
+  plugins: [],
+};
