@@ -4,7 +4,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 
 export default function LangNav() {
   return (
-    <div className="bg-black text-white-color flex px-8 py-3 text-sm lg:text-lg">
+    <div className="bg-black text-white-color flex gap-5  px-8 py-3 text-sm lg:text-lg">
       <div className={`${styles.flex.center} flex-1 gap-2`}>
         <p className="text-navbar">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
@@ -14,9 +14,9 @@ export default function LangNav() {
         </Link>
       </div>
 
-      <div className="flex cursor-pointer">
+      <div className="flex cursor-pointer ">
         <p>English</p>
-        <RiArrowDropDownLine className="text-3xl" />
+        <RiArrowDropDownLine className="text-xl lg:text-3xl" />
       </div>
     </div>
   );
