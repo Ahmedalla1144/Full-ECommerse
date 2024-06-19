@@ -1,10 +1,11 @@
 import { CiHeart, CiSearch } from "react-icons/ci";
 import { SlBasket } from "react-icons/sl";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "../../styles";
 
 export default function Navbar() {
 
+  const pathname  = useLocation().pathname;
 
   return (
     <div
@@ -15,26 +16,26 @@ export default function Navbar() {
       </div>
       <div className={`${styles.flex.around}  gap-5 font-medium`}>
         <Link
-          className="hover:underline underline-offset-4 transition-all"
+          className={`hover:underline underline-offset-4 transition-all ${pathname === '/' && 'underline' }`}
           to="/"
         >
           Home
         </Link>
         <Link
-          className="hover:underline underline-offset-4 transition-all"
-          to="/"
+          className={`hover:underline underline-offset-4 transition-all ${pathname === '/contact' && 'underline' }`}
+          to="/contact"
         >
           Contact
         </Link>
         <Link
-          className="hover:underline underline-offset-4 transition-all"
-          to="/"
+          className={`hover:underline underline-offset-4 transition-all ${pathname === '/about' && 'underline' }`}
+          to="/about"
         >
           About
         </Link>
         <Link
-          className="hover:underline underline-offset-4 transition-all"
-          to="/"
+          className={`hover:underline underline-offset-4 transition-all ${pathname === '/signup' && 'underline' }`}
+          to="/signup"
         >
           Sign Up
         </Link>
