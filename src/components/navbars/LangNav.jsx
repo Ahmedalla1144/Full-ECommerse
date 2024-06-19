@@ -22,7 +22,7 @@ export default function LangNav() {
 
   return (
     <div className="bg-black-color text-white-color flex gap-5 px-8 py-3 text-sm lg:text-lg">
-      <div className={`${styles.flex.center} flex-1 gap-2`}>
+      <div className={`flex flex-wrap justify-center items-center flex-1 gap-2`}>
         <p className="text-navbar">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
         </p>

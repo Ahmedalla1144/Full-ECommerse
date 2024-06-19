@@ -8,6 +8,7 @@ export default {
         "black-color": "#000000",
         navbar: "#D9D9D9",
         secondary: "#DB4444",
+        thirdcolor : '#F9F9F9'
       },
     },
   },

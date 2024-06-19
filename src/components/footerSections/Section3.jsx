@@ -4,8 +4,8 @@ import styles from "../../styles";
 export default function Section3() {
   return (
     <>
-      <section className={styles.sectionFooter}>
-        <h4>Account</h4>
+      <section className={styles.footer.sections}>
+        <h4 className={styles.footer.title2}>Account</h4>
         <Link>My Account</Link>
         <p><Link>Login</Link> / <Link>Register</Link></p>
         <Link>Cart</Link>
