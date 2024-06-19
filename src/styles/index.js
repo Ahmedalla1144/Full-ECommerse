@@ -1,21 +1,35 @@
-const flexCenter = "flex items-center";
+const setFlex = (justify = "center", items = "center", column) => {
+  if (column) {
+    return `flex justify-${justify} items-${items} flex-${column}`;
+  }
+  return `flex justify-${justify} items-${items}`;
+};
+
 const styles = {
   flex: {
-    center: `${flexCenter} justify-center`,
-    between: `${flexCenter} justify-between`,
-    around: `${flexCenter} justify-around`,
-    evenly: `${flexCenter} justify-evenly`,
-    end: `${flexCenter} justify-end`,
-    start: `${flexCenter} justify-start`,
-    col: `${flexCenter} flex-col justify-center`,
+    center: setFlex(),
+    between: setFlex("between"),
+    around: setFlex("around"),
+    evenly: setFlex("evenly"),
+    end: setFlex("end"),
+    start: setFlex("start"),
+    col: setFlex(undefined, undefined, "col"),
   },
   LangLi: "px-4 py-2 hover:bg-gray-100 cursor-pointer text-black-color",
 
   footer: {
-    footer: 'flex flex-col justify-center items-center bg-black-color text-white-color py-10 px-5',
+    footer: `${setFlex(
+      undefined,
+      undefined,
+      "col"
+    )} bg-black-color text-white-color py-10 px-5`,
     title1: "text-2xl font-bold mb-5",
     title2: "text-xl font-semibold mb-5",
-    sections: "flex flex-col gap-3 justify-start items-start w-60 h-64",
+    sections: `${setFlex(
+      "start",
+      "start",
+      "col"
+    )} gap-3 w-60 h-64 border-b border-gray-800`,
   },
 };
 
