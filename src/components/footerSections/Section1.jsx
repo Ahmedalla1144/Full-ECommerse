@@ -8,9 +8,9 @@ export default function Section1() {
         <h4 className={styles.footer.title1}>{import.meta.env.VITE_APP_NAME}</h4>
         <p className={styles.footer.title2}>Subscribe</p>
         <p className="" >Get 10% off your first order</p>
-        <div className="flex justify-center items-center gap-1 border-2 p-2 rounded-md">
+        <div className={`${styles.flex.center} gap-1 border-2 p-2 rounded-md`}>
           <input className="bg-black-color border-none outline-none" type="email" placeholder="Enter your email" />
-          <IoSendOutline />
+          <IoSendOutline className="cursor-pointer" />
         </div>
       </section>
     </>

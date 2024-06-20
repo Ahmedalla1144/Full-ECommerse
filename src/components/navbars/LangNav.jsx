@@ -32,7 +32,7 @@ export default function LangNav() {
       </div>
 
       <div
-        className="flex cursor-pointer relative "
+        className="flex cursor-pointer relative"
         onClick={() => {
           setIsOpen(!IsOpen);
         }}

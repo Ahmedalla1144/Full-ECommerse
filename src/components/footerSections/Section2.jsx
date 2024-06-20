@@ -6,9 +6,9 @@ export default function Section2() {
     <>
       <section className={styles.footer.sections}>
         <h4 className={styles.footer.title2}>Support</h4>
-        <Link>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</Link>
-        <Link>exclusive@gmail.com</Link>
-        <Link>+88015-88888-9999</Link>
+        <Link className={styles.footer.link} >111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</Link>
+        <Link className={styles.footer.link} >exclusive@gmail.com</Link>
+        <Link className={styles.footer.link} >+88015-88888-9999</Link>
       </section>
     </>
   );

@@ -1,4 +1,7 @@
-const setFlex = (justify = "center", items = "center", column) => {
+const setFlex = (justify = "center", items = "center", column, gap) => {
+  if ((gap, column)) {
+    return `flex justify ${justify} items-${items} flex-${column} gap-${gap}`;
+  }
   if (column) {
     return `flex justify-${justify} items-${items} flex-${column}`;
   }
@@ -14,6 +17,9 @@ const styles = {
     end: setFlex("end"),
     start: setFlex("start"),
     col: setFlex(undefined, undefined, "col"),
+    centerColGap: (gap) => {
+      return setFlex(undefined, undefined, "col", gap);
+    },
   },
   LangLi: "px-4 py-2 hover:bg-gray-100 cursor-pointer text-black-color",
 
@@ -28,8 +34,10 @@ const styles = {
     sections: `${setFlex(
       "start",
       "start",
-      "col"
-    )} gap-3 w-60 h-64 border-b border-gray-800`,
+      "col",
+      3
+    )} w-60 h-64 border-b border-gray-800 xs:border-none`,
+    link: "hover:text-gray-400 transition-all w-fit",
   },
 };
 

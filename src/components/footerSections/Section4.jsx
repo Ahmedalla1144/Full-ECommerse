@@ -6,10 +6,10 @@ export default function Section4() {
     <>
       <section className={styles.footer.sections}>
         <h4 className={styles.footer.title2}>Quick Link</h4>
-        <Link>Privacy Policy</Link>
-        <Link>Terms Of Use</Link>
-        <Link>FAQ</Link>
-        <Link>Contact</Link>
+        <Link className={styles.footer.link} >Privacy Policy</Link>
+        <Link className={styles.footer.link} >Terms Of Use</Link>
+        <Link className={styles.footer.link} >FAQ</Link>
+        <Link className={styles.footer.link} >Contact</Link>
       </section>
     </>
   );

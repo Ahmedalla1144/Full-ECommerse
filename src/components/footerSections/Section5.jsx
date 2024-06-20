@@ -10,12 +10,12 @@ export default function Section5() {
       <section className={styles.footer.sections}>
         <h4 className={styles.footer.title2}>Download App</h4>
         <p className="text-navbar">Save $3 with App New User Only</p>
-        <div className="flex  justify-center items-center gap-3" >
+        <div className={`${styles.flex.center} gap-3`} >
           <img
             src="https://s3-alpha-sig.figma.com/img/9913/87c0/5dd6d44594e01b675513068803e2426d?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dRydGkwuLDC94OBdYwRXCSq21jtVpzikR28ttLgJp7X3Y1gFUkJQn8N9mkVCiE2GJY2bDE~o5e-vKrYjwbmNy3tBPBdScBYqdty2jNgO9WIZWHdVZZta9Yr5YSSLWvZOdx4KS3wN0HPQsY212aVdAE6N308DmJIa-eZMvHSrNOp-q7hMJfEd0sbgWsrHriP1Y6nUen39cC0V86CZaYMneWsOH6O-kRzKJdIgrF3DnH4TBZflFTVAGJ8vXG08GoFTldPulZRPdNHCG7rxp9zsw0eoE-TAxLKT-C9dGjB~Hq7kJcuArXrrCu6i3mcM6jMCKDZOTyWRhDtMdhZBA5hX8A__"
             className="w-[76px] h-[76px] overflow-hidden object-cover"
           />
-          <div className=" flex flex-col justify-center items-center gap-2">
+          <div className={`${styles.flex.centerColGap(2)}`}>
             <Link>
               <img
                 src="https://s3-alpha-sig.figma.com/img/3893/2d5a/ccb54c528f9bcf326ca48ea29bd6d890?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QpoQCn5crq8RvUadF8oes32a5MA89bSvPmYrGSWYsbaGGelc2ddYhi0nwh-2ipHNWY45qfWOxarglhzdh7uz0hPl-phLAOCgGelyhsB9jMquMj-syB4MNZq3zx90ZcH4yQF87wcmRA0K6JLyHA3VLK10f92aJO1h5S9YlhwZr8y3P9oRV7t8wnSWcn5-qroaRdM08mhMP~fKa7YnxOy0I~2rRKsYOI4kZIvfjLUtV6dA3fcqB6zKMwMo5sTTlA8qAoscGyfWv-Fn6h~Kr8q~NMH9xYtsSUhgiQaI~bHQz9zd3NMWDuHzVbTL7Cxr0GwtS5jo-PrvUhLz5y0qmVmjFg__"
@@ -33,16 +33,16 @@ export default function Section5() {
           </div>
         </div>
         <div className="flex gap-8 justify-center items-center  " >
-          <Link>
+          <Link className={styles.footer.link} >
             <TiSocialFacebook className="text-2xl" />
           </Link>
-          <Link>
+          <Link className={styles.footer.link} >
             <CiTwitter className="text-2xl" />
           </Link>
-          <Link>
+          <Link className={styles.footer.link} >
             <FaInstagram className="text-2xl" />
           </Link>
-          <Link>
+          <Link className={styles.footer.link} >
             <FaLinkedinIn className="text-2xl" />
           </Link>
         </div>
