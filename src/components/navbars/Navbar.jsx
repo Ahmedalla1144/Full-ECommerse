@@ -8,9 +8,9 @@ export default function Navbar() {
 
   return (
     <div
-      className={`${styles.flex.around} flex-wrap gap-3 border-b shadow-lg mb-5 pt-4 pb-2 px-10 text-black-color`}
+      className={` ${styles.flex.around} flex-wrap gap-3 border-b shadow-lg mb-5 pt-4 pb-2 px-10 text-black-color`}
     >
-      <div className="">
+      <div>
         <p className="text-2xl font-bold">{import.meta.env.VITE_APP_NAME}</p>
       </div>
       <div className={`${styles.flex.around}  gap-5 font-medium`}>

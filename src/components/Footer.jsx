@@ -8,7 +8,8 @@ import Section6 from "./footerSections/Section6";
 
 export default function Footer() {
   return (
-    <footer className={styles.footer.footer}>
+    <footer className={styles.footer.footerSection}>
+      {/* <footer className='flex justify-center items-center flex-col bg-black-color text-white-color py-10 px-5'> */}
       <div className="flex flex-wrap justify-center items-center gap-5">
         <Section1 />
         <Section2 />
