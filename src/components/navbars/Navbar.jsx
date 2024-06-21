@@ -1,19 +1,20 @@
+import styles from "../../styles";
 import { CiHeart, CiSearch } from "react-icons/ci";
 import { SlBasket } from "react-icons/sl";
 import { Link, useLocation } from "react-router-dom";
-import styles from "../../styles";
 
 export default function Navbar() {
   const pathname = useLocation().pathname;
 
   return (
-    <div
-      className={` ${styles.flex.around} flex-wrap gap-3 border-b shadow-lg mb-5 pt-4 pb-2 px-10 text-black-color`}
-    >
+    <div className={` ${styles.flex.setAll('around', 'center', 'row', 3)} flex-wrap border-b shadow-lg mb-5 pt-4 pb-2 px-10 text-black-color`}>
+
+    {/* // <div className={`flex justify-around items-center flex-wrap gap-3 border-b shadow-lg mb-5 pt-4 pb-2 px-10 text-black-color`}> */}
+
       <div>
         <p className="text-2xl font-bold">{import.meta.env.VITE_APP_NAME}</p>
       </div>
-      <div className={`${styles.flex.around}  gap-5 font-medium`}>
+      <div className={`${styles.flex.around} gap-5 font-medium`}>
         <Link
           className={`hover:underline underline-offset-4 transition-all ${
             pathname === "/" && "underline"
