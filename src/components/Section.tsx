@@ -9,11 +9,9 @@ type SectionProps = {
 };
 
 export default function Section({
-  children,
   AllProductsButton,
   SectionTitle1,
   SectionTitle2,
-  ArrowButtons,
 }: SectionProps) {
   return (
     <section className="xs:px-20 flex justify-center flex-col w-full">
