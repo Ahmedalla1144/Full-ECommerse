@@ -101,11 +101,11 @@ export default function Home() {
         </Zoom>
       </header>
 
-      <Section AllProductsButton SectionTitle1='Todays' SectionTitle2 = 'Flash sales'>
+      <Section AllProductsButton SectionTitle1='Todays' SectionTitle2 = 'Flash sales' ArrowButtons>
         <p>a</p>
         <p>aa</p>
       </Section>
-      <Section>
+      <Section ArrowButtons SectionTitle1="Todays" SectionTitle2="Flash sales">
         <p>a</p>
         <p>aa</p>
       </Section>
