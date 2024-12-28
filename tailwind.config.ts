@@ -11,6 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        navbar: "#D9D9D9",
+        secondary: "#DB4444",
+        thirdcolor : '#F9F9F9'
+      },
+      screens: {
+        xs: '540px'
       },
     },
   },
