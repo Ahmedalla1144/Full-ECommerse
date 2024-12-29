@@ -7,7 +7,8 @@ type SectionProps = {
   AllProductsButton?: boolean;
   SectionTitle1: string;
   SectionTitle2: string;
-  ArrowButtons: boolean;
+  ArrowButtons?: boolean;
+  CountDown?: boolean
 };
 
 export default function Section({
@@ -15,10 +16,11 @@ export default function Section({
   SectionTitle1,
   SectionTitle2,
   ArrowButtons,
+  CountDown,
   children,
 }: SectionProps) {
   return (
-    <section className="px-5 xs:px-20 flex justify-center flex-col w-full">
+    <section className="px-5 xs:px-20 flex justify-center flex-col border-b-2 border-gray-500 pb-3 mb-3 w-[90%] m-auto">
       {/* first div */}
       <div className="flex flex-col md:flex-row justify-between">
         <div className="flex flex-col md:flex-row justify-between gap-5 md:gap-16">
@@ -31,7 +33,11 @@ export default function Section({
           </div>
 
           {/* countDown */}
+          {
+            CountDown &&
           <TimeCountDown />
+          }
+          
         </div>
 
         {ArrowButtons && (
@@ -43,9 +49,13 @@ export default function Section({
       </div>
 
       {/* Second div */}
-      <div>{children}</div>
+      <div className="py-10">{children}</div>
 
-      {AllProductsButton && <button>All Products Button</button>}
+      {AllProductsButton && (
+        <button className="bg-red-500 w-max px-6 py-3 text-center m-auto rounded font-semibold">
+          View All Products
+        </button>
+      )}
     </section>
   );
 }

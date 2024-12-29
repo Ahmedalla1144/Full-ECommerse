@@ -5,12 +5,13 @@ import Link from "next/link";
 import iphone14 from "../../public/iphone14.jpg";
 import playStationArm from "../../public/playstationarm.png";
 import apple from "../../public/apple.png";
-import { BsArrowRight, BsEye, BsStarFill } from "react-icons/bs";
-import { BiArrowBack, BiHeart } from "react-icons/bi";
+import { BsArrowRight } from "react-icons/bs";
+import { BiArrowBack } from "react-icons/bi";
 import { IoArrowForward } from "react-icons/io5";
 import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import Section from "@/components/Section";
+import ProductCart from "@/components/ProductCart";
 
 const zoomInProperties = {
   scale: 0.1,
@@ -101,54 +102,26 @@ export default function Home() {
         </Zoom>
       </header>
 
+          {/* sales section */}
       <Section
         AllProductsButton
         SectionTitle1="Todays"
         SectionTitle2="Flash sales"
         ArrowButtons
+        CountDown
       >
-        <div>
-          {/* first cart */}
-          <div className="w-max py-8">
-            {/* up div */}
-            <div className="bg-[#F5F5F5] dark:bg-gray-950 flex px-5 py-3 justify-center">
-              <p className="px-3 py-1 bg-red-500 w-max h-max rounded text-sm">
-                -40%
-              </p>
-              <Image
-                width={250}
-                height={250}
-                src={playStationArm}
-                alt="play Station Arm"
-              />
-              <div>
-                <BiHeart className="text-xl" />
-                <BsEye className="text-xl" />
-              </div>
-            </div>
-            {/* down dev */}
-            <div className="flex flex-col gap-2 pt-3">
-              <p>HAVIT HV-G92 Gamepad</p>
-              <p className="text-red-500">
-                $120 <span className="text-gray-400 line-through pl-2">$160</span>
-              </p>
-              <div className="flex justify-start items-center gap-3">
-                <div className="flex gap-1">
-                  <BsStarFill className="text-[#FFAD33]" />
-                  <BsStarFill className="text-[#FFAD33]" />
-                  <BsStarFill className="text-[#FFAD33]" />
-                  <BsStarFill className="text-[#FFAD33]" />
-                  <BsStarFill className="text-[#FFAD33]" />
-                </div>
-                <p>(88)</p>
-              </div>
-            </div>
-          </div>
+        <div className="flex gap-5 overflow-x-scroll pl-">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <ProductCart key={index} />
+          ))}
         </div>
       </Section>
-      <Section ArrowButtons SectionTitle1="Todays" SectionTitle2="Flash sales">
-        <p></p>
-      </Section>
+
+          {/* categories section */}
+          <Section SectionTitle1="Categories" SectionTitle2="Browse By Category" ArrowButtons >
+            Wait for it
+          </Section>
+
     </main>
   );
 }

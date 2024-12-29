@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -21,7 +20,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.icon {
+  @apply flex flex-wrap justify-around items-center gap-3;
+}
 
-.icon{
-  @apply flex flex-wrap justify-around items-center gap-3
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border-radius: 10px;
 }
