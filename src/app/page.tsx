@@ -134,7 +134,7 @@ export default function Home() {
         <ProductCart products={bestSellingProducts} />
       </Section>
 
-      <div className="flex flex-col md:flex-row justify-center items-center bg-black w-[90%] m-auto my-10 py-10">
+      <div className="flex flex-col md:flex-row justify-center items-center bg-black text-white w-[90%] m-auto my-10 py-10">
         {/* right div */}
         <div className="flex flex-col gap-10 w-full md:px-10">
           <h4 className="text-[#00FF66]">Categories</h4>
