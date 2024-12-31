@@ -171,7 +171,7 @@ export default function Home() {
             height={300}
             src={jblSpeakers}
             alt="JBl Speakers"
-            className="w-[568] h-[330] object-cover"
+            className="w-[568] h-[330] object-cover -scale-x-100"
           />
         </div>
       </div>
