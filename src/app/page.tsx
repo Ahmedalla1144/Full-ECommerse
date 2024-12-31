@@ -136,7 +136,7 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-center items-center bg-black text-white w-[90%] m-auto my-10 py-10">
         {/* right div */}
-        <div className="flex flex-col gap-10 w-full md:px-10">
+        <div className="flex flex-col gap-10 w-full px-2 md:px-10">
           <h4 className="text-[#00FF66]">Categories</h4>
           <h3 className="text-4xl md:text-5xl font-semibold leading-[50px]">
             Enhance Your <br /> Music Experience
