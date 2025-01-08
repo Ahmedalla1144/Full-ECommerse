@@ -17,6 +17,11 @@ export default function ProductCart({ products }: ProductCartComponentProps) {
           >
             -{product.discount}%
           </p>
+
+          <p className={`px-3 py-1 text-white bg-green-500 w-max h-max rounded text-sm absolute left-2 ${
+              product.new ? "" : "hidden"
+            }`}>New</p>
+
           <Image
             width={190}
             height={180}

@@ -16,8 +16,12 @@ export default {
         thirdcolor : '#F9F9F9'
       },
       screens: {
+        xxs: '400px',
         xs: '540px'
       },
+      backgroundImage: {
+        "radial-gradient" : "radial-gradient(circle, var(--tw-gradient-stops))"
+      }
     },
   },
   plugins: [],

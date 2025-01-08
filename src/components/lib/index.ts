@@ -8,6 +8,14 @@ import jacket from "../../../public/jacket.png";
 import gucciBag from "../../../public/gucci-bag.png";
 import rgpCpuCooler from "../../../public/rgp-cpu.cooler.png";
 import bookSelf from "../../../public/bookself.png";
+import dogFood from "../../../public/dog.food.jpg";
+import canonCamera from "../../../public/canon.camera.png";
+import asusLaptop from "../../../public/asus.laptop.png";
+import curologyHair from "../../../public/curology.hair.png";
+import KidsElectricCar from "../../../public/red.car.png";
+import ZoomSoccer from "../../../public/zoom.soccer.png";
+import ShooterUSBGamepad from "../../../public/shooter.usb.gampad.png";
+import SatinJacket from "../../../public/satin.jacket.png";
 import { CountDownLeft, ProductCartProps } from "../../../type";
 
 export const categories = [
@@ -222,11 +230,74 @@ export const bestSellingProducts: ProductCartProps[] = [
   },
 ];
 
+export const ourProdcts: ProductCartProps[] = [
+  {
+    title: "Breed Dry Dog Food",
+    image: dogFood,
+    price: 100,
+    stars: 3,
+    views: 35,
+  },
+  {
+    title: "CANON EOS DSLR Camera",
+    image: canonCamera,
+    price: 360,
+    stars: 4,
+    views: 95,
+  },
+  {
+    title: "ASUS FHD Gaming Laptop",
+    image: asusLaptop,
+    price: 700,
+    stars: 5,
+    views: 325,
+  },
+  {
+    title: "Curology Product Set",
+    image: curologyHair,
+    price: 500,
+    stars: 4,
+    views: 145,
+  },
+  {
+    title: "Kids Electric Car",
+    image: KidsElectricCar,
+    price: 960,
+    stars: 5,
+    views: 65,
+    new: true,
+  },
+  {
+    title: "Jr. Zoom Soccer Cleats",
+    image: ZoomSoccer,
+    price: 1160,
+    stars: 5,
+    views: 35,
+  },
+  {
+    title: "GP11 Shooter USB Gamepad",
+    image: ShooterUSBGamepad,
+    price: 660,
+    stars: 5,
+    views: 55,
+    new: true,
+  },
+  {
+    title: "Quilted Satin Jacket",
+    image: SatinJacket,
+    price: 660,
+    stars: 4,
+    views: 55,
+  },
+];
 
 export const calcTimeLeft = (): CountDownLeft => {
   let timeLeft: CountDownLeft = { days: 0, hrs: 0, mins: 0, secs: 0 };
   const now = new Date();
-  const endDate = new Date("2025-01-01T00:00:00");
+  const date = `2025-01-${
+    now.getDay() < 10 ? `0${now.getDay() + 1}` : now.getDate() + 1
+  }T00:00:00`;
+  const endDate = new Date(date);
   const diff = endDate.getTime() - now.getTime();
 
   timeLeft = {
@@ -237,4 +308,25 @@ export const calcTimeLeft = (): CountDownLeft => {
   };
 
   return timeLeft;
+};
+
+export const getMovies = async () => {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNjdhYmFmYjFjZDE3ODY0Y2Y2OTRmZDUyZWZkYzI2MyIsIm5iZiI6MTczNjAwMzQxNy4zMzUsInN1YiI6IjY3Nzk0ZjU5OGZkNmY1MTA5ZDcyN2U4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IWvHYcdS5MtnDtv5Whu26LwxbLGWuahKi8LXqbBDNrM",
+    },
+  };
+
+  try {
+    await fetch("https://api.themoviedb.org/3/tv/popular?page=2", options)
+      .then((response) => response.json())
+      .then((data) => {
+        return data.results;
+      });
+  } catch (err) {
+    console.error("Fetch Error :-S", err);
+    return [];
+  }
 };

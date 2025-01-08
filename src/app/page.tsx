@@ -5,6 +5,7 @@ import {
   categories,
   flashSalesProducts,
   heroProducts,
+  ourProdcts,
 } from "@/components/lib";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,9 +18,14 @@ import Section from "@/components/Section";
 import ProductCart from "@/components/ProductCart";
 import Categories from "@/components/Categories";
 import jblSpeakers from "../../public/jbl.speakers.png";
+import ps5 from "../../public/ps5.png";
+import WomenCollections from "../../public/women.collection.jpg";
+import Speakers from "../../public/speakers.png";
+import Perfume from "../../public/gucci.perfume.png";
 import { useEffect, useState } from "react";
 import { CountDownLeft } from "../../type";
 import styles from "@/components/styles";
+import ViewProduct from "@/components/ViewProduct";
 
 const zoomInProperties = {
   scale: 0.1,
@@ -35,19 +41,18 @@ const zoomInProperties = {
   cssClass: "w-[350px] xs:w-[450] sm:w-[500px] md:w-[600px] lg:w-[900px]",
 };
 
-
 export default function Home() {
   const initTime: CountDownLeft = { days: 0, hrs: 0, mins: 0, secs: 0 };
-    const [timeLeft, setTimeLeft] = useState<CountDownLeft>(initTime);
-  
-    useEffect(() => {
+  const [timeLeft, setTimeLeft] = useState<CountDownLeft>(initTime);
+
+  useEffect(() => {
+    setTimeLeft(calcTimeLeft());
+    const timer = setInterval(() => {
       setTimeLeft(calcTimeLeft());
-      const timer = setInterval(() => {
-        setTimeLeft(calcTimeLeft());
-      }, 1000);
-  
-      return () => clearInterval(timer);
-    }, []);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <main>
       <header className="flex flex-wrap justify-center items-start gap-5 md:gap-28 px-5 py-5">
@@ -134,28 +139,36 @@ export default function Home() {
         <ProductCart products={bestSellingProducts} />
       </Section>
 
-      <div className="flex flex-col md:flex-row justify-center items-center bg-black text-white w-[90%] m-auto my-10 py-10">
+      <div className="flex flex-col md:flex-row justify-center items-center bg-black text-white w-[90%] m-auto my-10 md:px-10 md:py-20 py-5 px-5">
         {/* right div */}
-        <div className="flex flex-col gap-10 w-full px-2 md:px-10">
+        <div className="flex flex-col gap-10 w-full md:px-10">
           <h4 className="text-[#00FF66]">Categories</h4>
           <h3 className="text-4xl md:text-5xl font-semibold leading-[50px]">
             Enhance Your <br /> Music Experience
           </h3>
           <div className="flex flex-wrap gap-3 md:gap-5">
             <div className={styles.timeCounter}>
-              <span className="text-lg md:text-xl font-bold">{timeLeft.days}</span>
+              <span className="text-lg md:text-xl font-bold">
+                {timeLeft.days}
+              </span>
               <span className="text-xs md:text-sm">Days</span>
             </div>
             <div className={styles.timeCounter}>
-              <span className="text-lg md:text-xl font-bold">{timeLeft.hrs}</span>
+              <span className="text-lg md:text-xl font-bold">
+                {timeLeft.hrs}
+              </span>
               <span className="text-xs md:text-sm">Hours</span>
             </div>
             <div className={styles.timeCounter}>
-              <span className="text-lg md:text-xl font-bold">{timeLeft.mins}</span>
+              <span className="text-lg md:text-xl font-bold">
+                {timeLeft.mins}
+              </span>
               <span className="text-xs md:text-sm">Minutes</span>
             </div>
             <div className={styles.timeCounter}>
-              <span className="text-lg md:text-xl font-bold">{timeLeft.secs}</span>
+              <span className="text-lg md:text-xl font-bold">
+                {timeLeft.secs}
+              </span>
               <span className="text-xs md:text-sm">Seconds</span>
             </div>
           </div>
@@ -165,7 +178,8 @@ export default function Home() {
         </div>
 
         {/* left div */}
-        <div className="flex justify-center items-center w-full relative">
+        <div className="flex justify-center items-center w-full relative ">
+          <div className="w-[280px] h-[280px] xxs:w-[90%] xxs:h-[90%] xs:w-[350px] xs:h-[350px] md:w-[400px] md:h-[400px] bg-radial-gradient from-[#D9D9D9] to-black to-70% rounded-full absolute" />
           <Image
             width={600}
             height={300}
@@ -175,6 +189,56 @@ export default function Home() {
           />
         </div>
       </div>
+
+      {/* our product section */}
+      <Section
+        SectionTitle1="Our Products"
+        SectionTitle2="Explore Our Products"
+        AllProductsButton
+        ArrowButtons
+        classes="flex overflow-x-scroll md:flex-wrap  gap-5"
+      >
+        <ProductCart products={ourProdcts} />
+      </Section>
+
+      <Section SectionTitle1="Featured" SectionTitle2="New Arrival">
+        <div className="flex flex-wrap gap-5">
+          {/* right div */}
+          <div className="">
+            <ViewProduct
+              title="PlayStation 5"
+              description="Black and White version of the PS5 coming out on sale."
+              img={ps5}
+            />
+          </div>
+
+          {/* left dev */}
+          <div className="">
+            {/* up div */}
+            <div>
+              <ViewProduct
+                title="Women’s Collections"
+                description="Featured woman collections that give you another vibe."
+                img={WomenCollections}
+              />
+            </div>
+
+            {/* down dev */}
+            <div>
+              <ViewProduct
+                title="Speakers"
+                description="Amazon wireless speakers"
+                img={Speakers}
+              />
+              <ViewProduct
+                title="Perfume"
+                description="GUCCI INTENSE OUD EDP"
+                img={Perfume}
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
     </main>
   );
 }

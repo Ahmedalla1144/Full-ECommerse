@@ -6,6 +6,7 @@ export type ProductCartProps = {
   discount?: number;
   stars: number;
   views: number;
+  new?: boolean;
 };
 
 
