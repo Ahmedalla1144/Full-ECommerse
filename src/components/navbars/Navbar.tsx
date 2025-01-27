@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { CiHeart, CiSearch } from "react-icons/ci";
 import { SlBasket } from "react-icons/sl";
 import styles from "../styles";
@@ -10,19 +10,20 @@ interface navBarProps {
   appName: string;
 }
 
-export default function Navbar({appName}: navBarProps) {
+export default function Navbar({ appName }: navBarProps) {
   const pathname = usePathname();
-  console.log(pathname)
-
+  console.log(pathname);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
-  }
+    console.log(e.target.value);
+  };
 
   return (
     <div className={`icon border-b shadow-lg mb-5 pt-4 pb-2 px-10`}>
       <div>
-        <p className="text-2xl font-bold">{appName}</p>
+        <Link href="/" className="text-2xl font-bold">
+          {appName}
+        </Link>
       </div>
       <div className={`${styles.flex.around} gap-5 font-medium`}>
         <Link
@@ -60,7 +61,10 @@ export default function Navbar({appName}: navBarProps) {
       </div>
       <div className={`${styles.flex.center} gap-2`}>
         <div>
-          <label id="search" className={`${styles.flex.center} gap-2 border-2 px-2 py-1 rounded-md`}>
+          <label
+            id="search"
+            className={`${styles.flex.center} gap-2 border-2 px-2 py-1 rounded-md`}
+          >
             <input
               className="outline-none w-full dark:bg-black"
               type="text"

@@ -47,7 +47,7 @@ const styles = {
     )} w-60 xs:h-64 border-b border-gray-800 sm:border-none pb-4`,
     link: "hover:text-gray-400 transition-all w-fit",
   },
-  timeCounter: "flex flex-col justify-center items-center w-[65px] h-[65px] md:w-[100px] md:h-[100px] bg-white rounded-full text-black font-semibold"
+  timeCounter: "flex flex-col justify-center items-center w-[65px] h-[65px] md:w-[75px] md:h-[75px] bg-white rounded-full text-black font-semibold"
 };
 
 export default styles;

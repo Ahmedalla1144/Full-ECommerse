@@ -10,7 +10,7 @@ export default function LangNav() {
 
   return (
     <div className="bg-black text-white flex gap-5 px-3 xs:px-8 py-3 text-sm lg:text-lg">
-      <div className="flex flex-wrap justify-start xs:justify-center items-center gap-2 flex-1">
+      <div className="flex flex-wrap justify-start xs:justify-center items-center gap-2 flex-1 text-sm">
         <p className="text-navbar">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
         </p>

@@ -295,7 +295,7 @@ export const calcTimeLeft = (): CountDownLeft => {
   let timeLeft: CountDownLeft = { days: 0, hrs: 0, mins: 0, secs: 0 };
   const now = new Date();
   const date = `2025-01-${
-    now.getDay() < 10 ? `0${now.getDay() + 1}` : now.getDate() + 1
+    now.getDate() < 10 ? `0${now.getDate() + 1}` : now.getDate() + 1
   }T00:00:00`;
   const endDate = new Date(date);
   const diff = endDate.getTime() - now.getTime();
@@ -308,25 +308,4 @@ export const calcTimeLeft = (): CountDownLeft => {
   };
 
   return timeLeft;
-};
-
-export const getMovies = async () => {
-  const options = {
-    method: "GET",
-    headers: {
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNjdhYmFmYjFjZDE3ODY0Y2Y2OTRmZDUyZWZkYzI2MyIsIm5iZiI6MTczNjAwMzQxNy4zMzUsInN1YiI6IjY3Nzk0ZjU5OGZkNmY1MTA5ZDcyN2U4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IWvHYcdS5MtnDtv5Whu26LwxbLGWuahKi8LXqbBDNrM",
-    },
-  };
-
-  try {
-    await fetch("https://api.themoviedb.org/3/tv/popular?page=2", options)
-      .then((response) => response.json())
-      .then((data) => {
-        return data.results;
-      });
-  } catch (err) {
-    console.error("Fetch Error :-S", err);
-    return [];
-  }
 };

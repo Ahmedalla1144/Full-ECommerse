@@ -10,7 +10,7 @@ type SectionProps = {
   SectionTitle2: string;
   ArrowButtons?: boolean;
   CountDown?: boolean;
-  classes?: string
+  classes?: string;
 };
 
 export default function Section({
@@ -20,10 +20,17 @@ export default function Section({
   ArrowButtons,
   CountDown,
   children,
-  classes
+  classes,
 }: SectionProps) {
   return (
-    <section className={`${styles.flex.setAll('center', '' ,'col', 5)} md:px-5 xs:px-20 border-b-2 dark:border-gray-500 border-[#000000] py-3 md:py-10 mb-3 w-[90%] m-auto`}>
+    <section
+      className={`${styles.flex.setAll(
+        "center",
+        "",
+        "col",
+        5
+      )} md:px-5 xs:px-20 border-b-2 dark:border-gray-500 border-[#000000] py-3 md:py-10 mb-3 w-[90%] m-auto`}
+    >
       {/* first div */}
       <div className="flex flex-col md:flex-row justify-between">
         <div className="flex flex-col md:flex-row justify-between gap-5 md:gap-16">

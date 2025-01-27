@@ -30,7 +30,7 @@ import ViewProduct from "@/components/ViewProduct";
 const zoomInProperties = {
   scale: 0.1,
   transitionDuration: 800,
-  duration: 2000,
+  duration: 900,
   infinite: true,
   prevArrow: <BiArrowBack className="absolute left-2 text-xl cursor-pointer" />,
   nextArrow: (
@@ -61,9 +61,14 @@ export default function Home() {
             Categories
           </p>
           {categories.slice(0, 10).map((section) => {
+            const name = section.title
+              .split(" ")
+              .map((word) => word.toLowerCase())
+              .toString()
+              .replace(/[’& ,]/g, "");
             return (
               <div className="pl-8" key={section.title}>
-                <button>{section.title}</button>
+                <Link href={`categories/${name}`}>{section.title}</Link>
               </div>
             );
           })}
@@ -179,9 +184,11 @@ export default function Home() {
 
         {/* left div */}
         <div className="flex justify-center items-center w-full relative ">
-          <div className="w-[280px] h-[280px] xxs:w-[90%] xxs:h-[90%] xs:w-[350px] xs:h-[350px] md:w-[400px] md:h-[400px] bg-radial-gradient from-[#D9D9D9] to-black to-70% rounded-full absolute" />
+          <div className="flex items-center justify-center w-full h-full px-7 blur-3xl absolute">
+            <div className="flex items-center justify-center w-[90%] h-[90%] p-4 rounded-full bg-[#D9D9D9]/30" />
+          </div>
           <Image
-            width={600}
+            width={500}
             height={300}
             src={jblSpeakers}
             alt="JBl Speakers"
@@ -201,39 +208,54 @@ export default function Home() {
         <ProductCart products={ourProdcts} />
       </Section>
 
+      {/* New Arrival section */}
       <Section SectionTitle1="Featured" SectionTitle2="New Arrival">
-        <div className="flex flex-wrap gap-5">
-          {/* right div */}
-          <div className="">
+        <div className="flex flex-wrap gap-5 justify-between">
+          {/* left div */}
+          <div className="lg:w-[50%]">
             <ViewProduct
               title="PlayStation 5"
               description="Black and White version of the PS5 coming out on sale."
               img={ps5}
+              classes_img_div="h-full flex justify-end items-end"
+              classes_div3="absolute bottom-0 px-5 w-1/2"
+              classes_div1="h-full"
             />
           </div>
 
-          {/* left dev */}
-          <div className="">
+          {/* right dev */}
+          <div className="flex flex-col gap-4 lg:w-[48%]">
             {/* up div */}
-            <div>
+            <div className="max-w-[600px]">
               <ViewProduct
                 title="Women’s Collections"
                 description="Featured woman collections that give you another vibe."
                 img={WomenCollections}
+                classes_div1="flex flex-row-reverse items-end"
+                classes_div3="w-full"
+                img_classes="-scale-x-100"
               />
             </div>
 
             {/* down dev */}
-            <div>
+            <div className="flex md:flex-row flex-col justify-center items-center gap-3">
               <ViewProduct
                 title="Speakers"
                 description="Amazon wireless speakers"
                 img={Speakers}
+                classes_img_div="flex justify-center items-center max-w-[300px]"
+                classes_div1="h-[300px] flex items-center w-full justify-center"
+                classes_div3="absolute bottom-0 left-1 !gap-1"
+                blurDiv
               />
               <ViewProduct
                 title="Perfume"
                 description="GUCCI INTENSE OUD EDP"
                 img={Perfume}
+                classes_div1="lg:h-[300px] flex items-center w-full justify-center"
+                classes_img_div="flex justify-center items-center max-w-[300px]"
+                classes_div3="absolute bottom-0 left-1 !gap-1"
+                blurDiv
               />
             </div>
           </div>
