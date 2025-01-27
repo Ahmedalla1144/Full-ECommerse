@@ -19,7 +19,7 @@ export default function Section5() {
         <div className={`${styles.flex.center} gap-3`}>
           <Image
             src={QRCode}
-            width={120}
+            width={100}
             height={10}
             className="object-cover"
           />
