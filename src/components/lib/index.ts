@@ -294,7 +294,7 @@ export const ourProdcts: ProductCartProps[] = [
 export const calcTimeLeft = (): CountDownLeft => {
   let timeLeft: CountDownLeft = { days: 0, hrs: 0, mins: 0, secs: 0 };
   const now = new Date();
-  const date = `2025-01-${
+  const date = `2025-${now.getMonth() < 10 ? `0${now.getMonth() + 1}` : now.getMonth() + 1}-${
     now.getDate() < 10 ? `0${now.getDate() + 1}` : now.getDate() + 1
   }T00:00:00`;
   const endDate = new Date(date);
