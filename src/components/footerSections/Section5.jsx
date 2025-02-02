@@ -19,6 +19,7 @@ export default function Section5() {
         <div className={`${styles.flex.center} gap-3`}>
           <Image
             src={QRCode}
+            alt="QR Code"
             width={100}
             height={10}
             className="object-cover"
@@ -30,7 +31,7 @@ export default function Section5() {
                 width={200}
                 height={10}
                 className=" h-14 object-cover"
-                alt=""
+                alt="Google Play Store"
               />
             </Link>
             <Link href="/">
@@ -38,7 +39,7 @@ export default function Section5() {
                 src={AppStore}
                 width={200}
                 height={10}
-                alt=""
+                alt="App Store For Apple"
                 className="h-16 object-cover"
               />
             </Link>
